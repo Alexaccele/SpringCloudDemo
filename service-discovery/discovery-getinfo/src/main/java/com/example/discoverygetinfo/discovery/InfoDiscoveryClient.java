@@ -1,4 +1,4 @@
-package com.example.getinfoservice.discovery;
+package com.example.discoverygetinfo.discovery;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.client.ServiceInstance;
@@ -17,12 +17,13 @@ public class InfoDiscoveryClient {
 
     public String getInfo(String name){
         RestTemplate restTemplate = new RestTemplate();
-        List<ServiceInstance> instances = discoveryClient.getInstances("discovery-getinfo");
+        //获取对应服务的所有实例列表
+        List<ServiceInstance> instances = discoveryClient.getInstances("getinfo-service");
         if(instances.size() == 0)return null;
         String serviceUri = String.format("%s/getInfo/%s",
                 instances.get(0).getUri().toString(),
-                name);
-        System.out.println(serviceUri);
+                name);//得到服务实例位置
+        //使用标准的Spring REST模板类调用该服务实例
         ResponseEntity<String> exchange = restTemplate.exchange(serviceUri, HttpMethod.GET, null, String.class, name);
         return exchange.getBody();
     }

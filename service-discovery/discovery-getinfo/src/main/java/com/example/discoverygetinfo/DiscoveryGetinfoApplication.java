@@ -9,12 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @SpringBootApplication
 @EnableDiscoveryClient
-@RestController
 public class DiscoveryGetinfoApplication {
-    @GetMapping("/getInfo/{name}")
-    public String getInfo(@PathVariable String name){
-        return "It's " + name + "'s info: ......";
-    }
     public static void main(String[] args) {
         SpringApplication.run(DiscoveryGetinfoApplication.class, args);
     }

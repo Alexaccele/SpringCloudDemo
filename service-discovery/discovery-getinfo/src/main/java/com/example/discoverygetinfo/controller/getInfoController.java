@@ -1,7 +1,7 @@
-package com.example.getinfoservice.controller;
+package com.example.discoverygetinfo.controller;
 
-import com.example.getinfoservice.discovery.InfoDiscoveryClient;
-import com.example.getinfoservice.discovery.InfoRibbonClient;
+import com.example.discoverygetinfo.discovery.InfoDiscoveryClient;
+import com.example.discoverygetinfo.discovery.InfoRibbonClient;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;

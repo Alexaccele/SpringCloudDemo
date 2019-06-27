@@ -11,7 +11,10 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class GetinfoServiceApplication {
 
-
+    @GetMapping("/getInfo/{name}")
+    public String getInfo(@PathVariable String name){
+        return "It's " + name + "'s info: ......";
+    }
     public static void main(String[] args) {
         SpringApplication.run(GetinfoServiceApplication.class, args);
     }
