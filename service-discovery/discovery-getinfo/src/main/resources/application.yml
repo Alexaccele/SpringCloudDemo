@@ -1,0 +1,14 @@
+
+spring:
+  profiles:
+    active: default
+eureka:
+  instance:
+    prefer-ip-address: true  #注册服务的IP，而不是服务器名称
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:8761/eureka #Eureka服务位置
+server:
+  port: 8091

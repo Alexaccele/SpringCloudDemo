@@ -1,0 +1,10 @@
+
+server:
+  port: 8761  #Eureka服务端口
+
+eureka:
+  client:
+    registerWithEureka: false #Eureka服务 本身不进行服务注册
+    fetch-registry: false #Eureka服务 本身不进行本地缓存注册表信息
+#  server:
+#    waitTimeInMsWhenSyncEmpty: 5 #等待其他待注册服务5min，让所有服务有机会在通告它们之前通过Eureka进行注册
