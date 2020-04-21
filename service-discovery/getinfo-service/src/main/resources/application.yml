@@ -3,11 +3,11 @@ spring:
     active: default
 eureka:
   instance:
-    prefer-ip-address: true  #注册服务的IP，而不是服务器名称
+    prefer-ip-address: true  #娉ㄥ唽鏈嶅姟鐨処P锛岃�屼笉鏄湇鍔″櫒鍚嶇О
   client:
     register-with-eureka: true
     fetch-registry: true
     service-url:
-      defaultZone: http://localhost:8761/eureka #Eureka服务位置
+      defaultZone: http://localhost:8761/eureka #Eureka鏈嶅姟浣嶇疆
 server:
   port: 8090

@@ -1,10 +1,10 @@
 
 server:
-  port: 8761  #Eureka·şÎñ¶Ë¿Ú
+  port: 8761  #EurekaæœåŠ¡ç«¯å£
 
 eureka:
   client:
-    registerWithEureka: false #Eureka·şÎñ ±¾Éí²»½øĞĞ·şÎñ×¢²á
-    fetch-registry: false #Eureka·şÎñ ±¾Éí²»½øĞĞ±¾µØ»º´æ×¢²á±íĞÅÏ¢
+    registerWithEureka: false #EurekaæœåŠ¡ æœ¬èº«ä¸è¿›è¡ŒæœåŠ¡æ³¨å†Œ
+    fetch-registry: false #EurekaæœåŠ¡ æœ¬èº«ä¸è¿›è¡Œæœ¬åœ°ç¼“å­˜æ³¨å†Œè¡¨ä¿¡æ¯
 #  server:
-#    waitTimeInMsWhenSyncEmpty: 5 #µÈ´ıÆäËû´ı×¢²á·şÎñ5min£¬ÈÃËùÓĞ·şÎñÓĞ»ú»áÔÚÍ¨¸æËüÃÇÖ®Ç°Í¨¹ıEureka½øĞĞ×¢²á
+#    waitTimeInMsWhenSyncEmpty: 5 #ç­‰å¾…å…¶ä»–å¾…æ³¨å†ŒæœåŠ¡5minï¼Œè®©æ‰€æœ‰æœåŠ¡æœ‰æœºä¼šåœ¨é€šå‘Šå®ƒä»¬ä¹‹å‰é€šè¿‡Eurekaè¿›è¡Œæ³¨å†Œ

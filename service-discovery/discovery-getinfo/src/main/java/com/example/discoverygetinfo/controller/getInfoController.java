@@ -1,6 +1,7 @@
 package com.example.discoverygetinfo.controller;
 
 import com.example.discoverygetinfo.discovery.InfoDiscoveryClient;
+import com.example.discoverygetinfo.discovery.InfoFeignClient;
 import com.example.discoverygetinfo.discovery.InfoRibbonClient;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -13,6 +14,8 @@ public class getInfoController {
     InfoDiscoveryClient discoveryClient;
     @Autowired
     InfoRibbonClient ribbonClient;
+    @Autowired
+    InfoFeignClient feignClient;
     @GetMapping("/getInfo/{name}/{type}")
     private String getInfoByDiscovery(@PathVariable String name, @PathVariable(name = "type") String discoveryType){
         String info = null;
@@ -26,7 +29,7 @@ public class getInfoController {
                 info = ribbonClient.getInfo(name);
                 break;
             default:
-                info = discoveryClient.getInfo(name);
+                info = feignClient.getInfoByDiscovery(name);
         }
         return info;
     }

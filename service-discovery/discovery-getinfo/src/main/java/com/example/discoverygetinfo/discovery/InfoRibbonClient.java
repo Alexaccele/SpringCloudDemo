@@ -20,7 +20,7 @@ public class InfoRibbonClient {
     RestTemplate restTemplate;
 
     public String getInfo(String name){
-        ResponseEntity<String> exchange = restTemplate.exchange("http://getifo-service/getInfo/{name}",
+        ResponseEntity<String> exchange = restTemplate.exchange("http://getinfo-service/getInfo/{name}",
                 HttpMethod.GET,
                 null, String.class, name);
         return exchange.getBody();
