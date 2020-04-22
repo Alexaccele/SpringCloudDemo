@@ -1,0 +1,30 @@
+spring:
+  application:
+    name: zuul-gateway
+eureka:
+  instance:
+    prefer-ip-address: true  #注册服务的IP，而不是服务器名称
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:8761/eureka #zuul默认使用Eureka查找服务，配置服务发现地址
+server:
+  port: 5555
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*" #注意这里*要加引号，暴露全部，也可以只暴露相应endpoint
+  endpoint:
+    routes:
+      enabled: true # 默认为true，可以省略
+zuul:
+  prefix: /api #使用/api前缀来区分服务名称，与URL中的实际路由内存
+  routes:
+    getinfo-service: /get/** #用简单的自定义get路由替代getinfo-serivce服务路由
+    #配置静态路由，将所有到/getstatic/**的路由映射到8090端口
+    getinfo-service-static:   #内部服务识别自定义关键字
+      path: /getstatic/**
+      url: http://localhost:8090
+  ignored-services: '*' #忽略基于Eureka服务ID的自动路由绑定

@@ -29,6 +29,7 @@ public class getInfoController {
                 info = ribbonClient.getInfo(name);
                 break;
             default:
+
                 info = feignClient.getInfoByDiscovery(name);
         }
         return info;
